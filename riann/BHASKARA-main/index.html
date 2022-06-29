@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bhaskara</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <img src="anime.jpeg" id="fundo" alt="">
+    <section>
+        <div id="cont">
+            <h1 id="bhaskara">BHASKARA</h1>
+            <h2 id="info">Informe os valores:</h1>
+                <label id="vA" for="valorA">Valor A:</label>
+                <input type="number" id="valorA">
+                <label id="vB" for="valorB">Valor B:</label>
+                <input type="number" id="valorB">
+                <label id="vC" for="valorC">Valor C:</label>
+                <input type="number" id="valorC">
+                <button id="btncalcular" class="button1">Calcular</button>
+                <div id="resultados">
+                    <div id="delta"></div>
+                    <div id="resultadobhaskaradiv"></div>
+                </div>
+        </div>
+        </div>
+    </section>
+
+
+    <script>
+        document.getElementById('btncalcular').addEventListener('click', caldelta)
+        function caldelta() {
+            var valorA = document.getElementById('valorA').value;
+            var valorB = document.getElementById('valorB').value;
+            var valorC = document.getElementById('valorC').value;
+            var delta = valorB * valorB - 4 * valorA * valorC;
+            document.getElementById('delta').innerHTML = 'Delta: <strong> ' + delta + '</strong>';
+            x1 = (- valorB + Math.sqrt(delta)) / (2 * valorA);
+            x2 = (- valorB - Math.sqrt(delta)) / (2 * valorA);
+            document.getElementById('resultadobhaskaradiv').innerHTML = 'X1=' + x1 + '\nX2 =' + x2;
+        }
+    </script>
+</body>
+
+</html>
